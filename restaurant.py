@@ -1,33 +1,36 @@
+#CS175
 #Lola Weis
-#CS-175
-#Resaurant
+#restaurant version 2
 
-vegetarian= str(input("Is anyone in your party vegetarian? "))
-vegan= str(input("Is anyone in your party vegan? "))
-gluten= str(input("Is anyone in your party gluten-free? "))
+vegetarian=False
+vegan=False
+gluten_free=False
+askagain=True
+while askagain== True:
+    vegetarianif = str(input("Is anyone in your party vegetarian? ").lower())
+    if vegetarianif== "yes":
+        vegetarian=True
+    veganif= str(input("Is anyone in your party vegan? ").lower())
+    if veganif== "yes":
+        vegan=True
+    glutenfreeif= str(input("Is anyone in your party gluten free? ").lower())
+    if glutenfreeif== "yes":
+        gluten_free=True
+                    
+    print("Here are your restaurant choices: ")
 
-if vegetarian=="Yes" or "yes":
-    if vegan=="Yes" or "yes":
-        if gluten=="Yes" or "yes":
-            print("The Chef's Kitchen\n" "Corner Cafe")
-        else:
-            print("The Chef's Kitchen\n" "Corner Cafe")
-    else:
-        if gluten=="Yes" or "yes":
-            print("Main Street Pizza Company\n" "The Chef's Kitchen\n" "Corner Cafe")
-        else:
-            print("Main Street Pizza Company\n" "The Chef's Kitchen\n" "Corner Cafe\n" "Mama's Fine Italian")
+    print("Corner Cafe")
+    print("Chefs Kitchen")
 
-else:
-    if vegan=="Yes" or "yes":
-        if gluten=="Yes" or "yes":
-            print("The Chef's Kitchen\n" "Corner Cafe")
-        else:
-            print("The Chef's Kitchen\n" "Corner Cafe")
-    else:
-        if gluten=="Yes" or "yes":
-            print("Main Street Pizza Company\n" "The Chef's Kitchen\n" "Corner Cafe")
-        else:
-            print("Main Street Pizza Company\n" "The Chef's Kitchen\n" "Corner Cafe\n" "Mama's Fine Italian\n" "Joe's Gourmet Burgers")
-                
+    if vegetarian== False and vegan == False and gluten_free== False:
+                   print ("Joes Gourmet Burgers")
+    if vegan== False and gluten_free==False:
+                   print("Mamas Fine Italian")
+    if vegan==False:
+                   print("Main Street Pizza")
 
+    answer= str(input("Would you like to do another restaurant search? ").lower())
+    if answer!="yes":
+        askagain=False
+print("Thank you for using this program!")
+        
