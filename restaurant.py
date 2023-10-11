@@ -8,7 +8,7 @@ gluten= str(input("Is anyone in your party gluten-free? "))
 
 if vegetarian=="Yes" or "yes":
     if vegan=="Yes" or "yes":
-        if gluten=="Yes":
+        if gluten=="Yes" or "yes":
             print("The Chef's Kitchen\n" "Corner Cafe")
         else:
             print("The Chef's Kitchen\n" "Corner Cafe")
