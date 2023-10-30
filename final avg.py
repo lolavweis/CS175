@@ -27,25 +27,31 @@ def enterScores():
         score=int(input())
         scores.append(score)
     return scores
-scores=enterScores()
-
-average = calc_average(scores)
 
 
-another_calculation=True
-while another_calculation==True:
-        for i, score in enumerate(scores):
-            grade = determine_grade(score)
-            print(f"Score {i + 1}: {score}   {grade}")
+def main():
+    another_calculation=True
+    
 
-        print(f"Average Score: {average}  {determine_grade(average)}")
 
-        another_calculation = input("Enter 'yes' if you want to do another calculation: ").strip().lower()
-        if another_calculation == 'yes':
-            another_calculation = True
-        else:
-            another_calculation = False
-            
+    while another_calculation==True:
+            scores=enterScores()
+            average = calc_average(scores)
+            for i, score in enumerate(scores):
+                grade = determine_grade(score)
+                print(f"Score {i + 1}: {score}   {grade}")
+
+            print(f"Average Score: {average}  {determine_grade(average)}")
+
+            another_calculation = input("Enter 'yes' if you want to do another calculation: ").lower()
+            if another_calculation == "yes":
+                another_calculation==True
+            else:
+                another_calculation==False
+            main()
+    
+                
+main()
 
 
 
